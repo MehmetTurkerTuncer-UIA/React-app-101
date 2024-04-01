@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  
+  
+  const userInfo = [
+    {
+      id:1,
+      username: "Mehmet",
+      email:"test@gmail.com",
+      location: "Norway"
+    },
+    {
+      id:2,
+      username: "Ali",
+      email:"test1@gmail.com",
+      location: "Germany"
+    },
+    {
+      id:3,
+      username: "Veli",
+      email:"test2@gmail.com",
+      location: "Turkey"
+    }
+  ]
+
+
+  
+  
+  return(
+
+      <>
+        {userInfo.map(user => (
+          <ul key={user.id}>
+            <li>{user.id}</li>
+            <li>{user.username}</li>
+            <li>{user.email}</li>
+            <li>{user.location}</li>
+          
+          </ul>
+
+        ))}
+
+      </>
+  ) 
+  
+  
+  
 }
 
 export default App;
