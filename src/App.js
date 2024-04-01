@@ -1,18 +1,29 @@
-const ValidPassword = () => <h1>Valid Password</h1>
-const InvalidPassword = () => <h1>Invalid Password</h1>
+const Card = () => {
 
-const Password = ({isValid}) => {
-  if(isValid){
-    return <ValidPassword/>;
-  }
-  return <InvalidPassword/>
+  const items = ["elma","armut", "muz"]
+
+  return (
+    <>
+      <h1> You have an Card </h1>
+      {items.length > 0 &&  <h2> You have {items.length}-item in your Cad</h2> }
+
+      <ul >
+      {items.map((item) => ( <li key={Math.random()}> {item}</li> ))}  
+    
+      
+      </ul>
+    
+    </>
+
+  )
+
 }
 
 
 function App() {
   return (
     <>
-     <Password  isValid={false}/>
+     <Card/>
     </>
   );
 }
